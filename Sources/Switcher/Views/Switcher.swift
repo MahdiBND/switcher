@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct CategorySwitch<Item: Switchable>: View {
+public struct CategorySwitch<Item: Switchable>: View {
     @Namespace private var animation
 
-    var items: [Item]
-    @Binding var selectedSwitch: Item?
-    var itemWidth: CGFloat = .infinity
-    var scrollEnabled = true
-    var itemAction: (Item) -> Void = { _ in }
+    public var items: [Item]
+    @Binding public var selectedSwitch: Item?
+    public var itemWidth: CGFloat = .infinity
+    public var scrollEnabled = true
+    public var itemAction: (Item) -> Void = { _ in }
 
     private func getWidth(from proxy: GeometryProxy) -> CGFloat? {
         if itemWidth == .infinity {
