@@ -8,6 +8,5 @@
 import SwiftUI
 
 public protocol Switchable: Identifiable, Hashable {
-    var id: Int { get }
     var switchTitle: String { get }
 }
