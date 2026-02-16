@@ -24,7 +24,7 @@ public struct CategorySwitch<Item: Switchable>: View {
         }
     }
 
-    var body: some View {
+    public var body: some View {
         Group {
             if scrollEnabled {
                 ScrollViewReader { scrollProxy in
@@ -75,7 +75,7 @@ public struct CategorySwitch<Item: Switchable>: View {
             if self.selectedSwitch != item {
                 self.selectedSwitch = item
 
-                Feedback.send(style: .soft)
+//                Feedback.send(style: .soft)
 
                 itemAction(item)
 
