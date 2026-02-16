@@ -27,10 +27,6 @@ internal struct SwitchItemBorderWidthKey: EnvironmentKey {
     static let defaultValue: CGFloat = 2
 }
 
-internal struct SwitchItemSelectedBorderWidthKey: EnvironmentKey {
-    static let defaultValue: CGFloat = 0
-}
-
 internal struct SwitchItemBorderColorKey: EnvironmentKey {
     static let defaultValue: Color = .gray
 }

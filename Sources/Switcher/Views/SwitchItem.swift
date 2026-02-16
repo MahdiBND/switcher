@@ -13,7 +13,6 @@ internal struct SwitchItem: View {
     @Environment(\.switchItemForegroundColor) private var envForeground
     @Environment(\.switchItemSelectedForegroundColor) private var envSelectedForeground
     @Environment(\.switchItemBorderWidth) private var envBorderWidth
-    @Environment(\.switchItemSelectedBorderWidth) private var envSelectedBorderWidth
     @Environment(\.switchItemBorderColor) private var envBorderColor
     @Environment(\.switchItemImageSize) private var envImageSize
 
@@ -76,8 +75,9 @@ private extension SwitchItem {
         isSelected ? envSelectedForeground : envForeground
     }
 
+    // No border when item is selected
     var borderWidth: CGFloat {
-        isSelected ? envSelectedBorderWidth : envBorderWidth
+        isSelected ? 0 : envBorderWidth
     }
 
     var borderColor: Color {

@@ -33,11 +33,6 @@ public extension EnvironmentValues {
         set { self[SwitchItemBorderWidthKey.self] = newValue }
     }
 
-    var switchItemSelectedBorderWidth: CGFloat {
-        get { self[SwitchItemSelectedBorderWidthKey.self] }
-        set { self[SwitchItemSelectedBorderWidthKey.self] = newValue }
-    }
-
     var switchItemBorderColor: Color {
         get { self[SwitchItemBorderColorKey.self] }
         set { self[SwitchItemBorderColorKey.self] = newValue }
