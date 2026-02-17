@@ -47,15 +47,23 @@ internal struct SwitchItem: View {
             .background(backgroundShape)
             .overlay(alignment: .bottom) { borderShape }
         }
+        .buttonStyle(.plain)
     }
 }
 
 private extension SwitchItem {
     var backgroundShape: some View {
-        Capsule(style: .continuous)
-            .fill(background)
-            .matchedGeometryEffect(id: backgroundID, in: self.animation, isSource: isSelected)
-            .animation(.spring(duration: 0.25), value: isSelected)
+        ZStack {
+            Capsule(style: .continuous)
+                .fill(envBackground.opacity(isSelected ? 0.3 : 1))
+
+            if isSelected {
+                Capsule(style: .continuous)
+                    .fill(envSelectedBackground)
+                    .matchedGeometryEffect(id: backgroundID, in: self.animation)
+            }
+        }
+        .animation(.spring(duration: 0.25), value: isSelected)
     }
 
     var borderShape: some View {
